@@ -54,7 +54,22 @@ function sum1(a:number,...result:number[]){
 }
 sum(1,2,3)//a为1，result为2 3
 // 函数重载：同一个函数，传入不同的参数，执行不同的结果
-//es5中出现同名的方法，下面会覆盖上面的方法 ，但是ts中不会
+//es5中出现同名的方法，下面会覆盖上面的方法 ，但是ts中不会,ts有函数重载
+// 如：
+function getInfo3(name:string):string;
+function getInfo3(age:number):string;
+function getInfo3(str:any):any{
+    if(typeof str==='string'){
+        return '我叫：'+str;
+    }else{
+        return '我的年龄是'+str;
+    }
+}
+// 调用：
+alert(getInfo3('张三'))
+alert(getInfo3(30))
+console.log(2)
+
 
 
 
